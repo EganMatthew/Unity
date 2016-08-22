@@ -6,21 +6,21 @@ Direct3D:
     Vendor:   Intel
     VRAM:     880 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\user\Documents\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\user\Documents\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\user\Documents\Networking1\Builds\DeleteThisBuild2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\user\Documents\Networking1\Builds\DeleteThisBuild2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\user\Documents\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\user\Documents\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\user\Documents\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\user\Documents\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.061 seconds
-Platform assembly: C:\Users\user\Documents\Networking1\Builds\DeleteThisBuild2_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\user\Documents\Networking1\Builds\DeleteThisBuild2_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\user\Documents\Unity\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\user\Documents\Unity\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\user\Documents\Unity\Networking1\Builds\DeleteThisBuild2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\user\Documents\Unity\Networking1\Builds\DeleteThisBuild2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\user\Documents\Unity\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\user\Documents\Unity\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\user\Documents\Unity\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\user\Documents\Unity\Networking1\Builds\DeleteThisBuild2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.065 seconds
+Platform assembly: C:\Users\user\Documents\Unity\Networking1\Builds\DeleteThisBuild2_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\user\Documents\Unity\Networking1\Builds\DeleteThisBuild2_Data\Managed\System.dll (this message is harmless)
 desktop: 1050x1680 59Hz; virtual: 1050x1680 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.251315 ms
+UnloadTime: 1.182731 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 754 -> priority: 1 
+  Thread -> id: 105c -> priority: 1 

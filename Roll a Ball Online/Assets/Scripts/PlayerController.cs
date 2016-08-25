@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
     //this is where most of our game code will go.
     void Update()
     {
-
+        //transform.Translate(new Vector3(10, 10, 10) * Time.deltaTime * .1f);
     }
     //called just before performing any physics calculations.
     //this is where our physics code will go.

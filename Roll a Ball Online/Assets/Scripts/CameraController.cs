@@ -11,19 +11,17 @@ public class CameraController : MonoBehaviour
     public float maxZoomDistance;
     public float minZoomDistance = 15f;
     private Vector3 offset;
-    //private Vector3 newCameraPosition;
 
     // Use this for initialization
     void Start()
     {
-        //newCameraPosition = Camera.main.transform.position;
         rotateSpeed = 5.0f;
         zoomSpeed = 1f;
         maxZoomDistance = 90f;
         minZoomDistance = 15f;
 
-        offset = transform.position - target.transform.position;
         transform.LookAt(target.transform);
+        offset = transform.position - target.transform.position;
     }
 
     // Update is called once per frame
@@ -31,16 +29,16 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         // Enable the camera to move with the target
-        positionHandler();
+        //positionHandler();
 
         // Enable camera zoom on our target
         zoomHandler();
 
         // Enable camera rotation on the X axis
-        xRotationHandler();
+        //xRotationHandler();
 
         // Enable camera rotation on the Y axis
-        yRotationHandler();
+        //yRotationHandler();
     }
 
     void positionHandler()
@@ -77,6 +75,9 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    float distance = 0;
+    bool zooming = false;
+
     void zoomHandler()
     {
         //TODO: Smooth zoom
@@ -90,16 +91,32 @@ public class CameraController : MonoBehaviour
         {
             Vector3 slope = offset * Mathf.Sign(scrollEventData) * -1;
             slope.Normalize();
-            Vector3 newCameraPosition = Camera.main.transform.position;
-            //zoomSpeed = 50;
-            newCameraPosition += (slope * zoomSpeed);
-            Camera.main.transform.position = newCameraPosition;
-            //Vector3.Lerp(Camera.main.transform.position, newCameraPosition, Time.deltaTime * 2);
-            offset = transform.position - target.transform.position;
+            Vector3 newCameraPosition = transform.position;
+            newCameraPosition += slope;
+            distance = Vector3.Distance(newCameraPosition, transform.position);
+            zooming = true;
+            //transform.position = newCameraPosition;
+            //offset = transform.position - target.transform.position;
         }
 
-        //Debug.Log(Camera.main.transform.position);
-        //Debug.Log(newCameraPosition);
-        //Vector3.Lerp(Camera.main.transform.position, newCameraPosition, Time.deltaTime * 2);
+        if (zooming)
+        {
+            Vector3 newCameraPosition2 = transform.position;
+            Vector3 slope2 = offset * Mathf.Sign(scrollEventData) * -1;
+            slope2.Normalize();
+            newCameraPosition2 += slope2;
+
+            Debug.Log(slope2);
+
+            if (Vector3.Distance(transform.position, newCameraPosition2) - distance > .001)
+            {
+                transform.position = Vector3.Lerp(transform.position, newCameraPosition2, Time.deltaTime * .1f);
+                //transform.Translate(target.transform.position * Time.deltaTime);
+                //Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * 5);
+                offset = transform.position - target.transform.position;
+                return;
+            }
+            zooming = false;
+        }
     }
 }

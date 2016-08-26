@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
 
+// Ball chasing mouse movement
+// Mouse adding force to ball movement
+
 public class PlayerController : MonoBehaviour {
 
     public float speed;

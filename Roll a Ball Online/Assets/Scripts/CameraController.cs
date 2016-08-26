@@ -15,19 +15,21 @@ public class CameraController : MonoBehaviour
     // Zooming Variables
     private float distanceToZoom;
     private Vector3 slopeOfZoomLine;    // Same as the cameraTargetLine, but normalized and includes zoom direction
-    public float zoomSpeed;
+    public float zoomSpeed;             // Speed at which a request to zoom will be fulfiled
+    public float zoomSensitivity;       // Determines the ammount of distance each scroll request produces
     public float maxZoomDistance;
     public float minZoomDistance;
 
     // Use this for initialization
     void Start()
     {
-        rotateSpeed = 5.0f;
-        zoomSpeed = 2.5f;
-        maxZoomDistance = 30f;
-        minZoomDistance = 5f;
-        distanceToZoom = 0;
-        slopeOfZoomLine = new Vector3(0, 0, 0);
+        rotateSpeed = 5.0f;             // A constant
+        zoomSpeed = 2.5f;               // A constant
+        maxZoomDistance = 30f;          // A constant
+        minZoomDistance = 5f;           // A constant
+        distanceToZoom = 0;             // A dynamic variable that keeps track of distances that need to be zoomed
+        zoomSensitivity = 1;            // A constant. A value of 0 produces no movement during scroll requests
+        slopeOfZoomLine = new Vector3(0, 0, 0); // A dynamic variable
 
         transform.LookAt(target.transform);
         cameraTargetLine = transform.position - target.transform.position;
@@ -52,13 +54,16 @@ public class CameraController : MonoBehaviour
 
     void positionHandler()
     {
+        // NOTE: The object this camera is tracking should be moving smoothly, else the camera will seem discrete
         // Move the camera relative to the target
         transform.position = target.transform.position + cameraTargetLine;
     }
 
     void yRotationHandler()
     {
+        // TODO: Implement smooth rotation
         // TODO: Limit the camera angle
+        // TODO: Add restrictions to rotations and world objects. TBD.
 
         // If the right mouse button is pressed
         if (Input.GetMouseButton(1))
@@ -73,6 +78,9 @@ public class CameraController : MonoBehaviour
 
     void xRotationHandler()
     {
+        // TODO: Implement smooth rotation
+        // TODO: Add restrictions to rotations and world objects. TBD.
+
         // If the right mouse button is pressed
         if (Input.GetMouseButton(1))
         {
@@ -86,6 +94,8 @@ public class CameraController : MonoBehaviour
 
     void zoomHandler()
     {
+        // TODO: Add zoom sensitivity metric, this will determine how far a single scroll goes
+
         // Get any potential data caused by the scroll wheel
         float scrollEventData = Input.GetAxis("Mouse ScrollWheel");
 
